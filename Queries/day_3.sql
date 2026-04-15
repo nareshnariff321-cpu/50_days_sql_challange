@@ -1,4 +1,5 @@
 --updating missing values--
+
 update cleaned_performance
 set rating_2023='0'
 where rating_2023='';
@@ -27,22 +28,28 @@ group by dept_id,dept_name having count(*)>1;
 
 --attendence--
 
-select attendance_id,count(*) as duplicates
+select attendance_id,attendence_date,status,count(*) as duplicates
 from cleaned_attendence
-group by attendance_id 
+group by attendance_id,attendence_date,status
 having count(*)>1;
 
 --performance--
 
-select emp_id,count(*) as duplicates
+select emp_id,rating_2022,rating_2023,rating_2024,count(*) as duplicates
 from cleaned_performance
-group by emp_id 
+group by emp_id,rating_2022,rating_2023,rating_2024
 having count(*)>1;
 
 --salaries--
 
-select salary_id,salary_date,count(*) as duplicates
+select 
+   salary_id,
+   salary,
+   salary_date,
+   count(*) as duplicates 
 from cleaned_salaries
-group by salary_id,salary_date
+group by salary_id,
+   salary,
+   salary_date
 having count(*)>1;
 
