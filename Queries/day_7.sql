@@ -50,3 +50,5 @@ update cleaned_salaries
 set salary_date = concat(right(salary_date,4),'-',substring(salary_date,4,2),'-',
 left(salary_date,2)) where salary_date like '__-__-____';
 
+
+
