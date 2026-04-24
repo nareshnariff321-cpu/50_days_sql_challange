@@ -13,3 +13,6 @@ from cleaned_salaries;
 select emp_id,attendence_date,status,lead(status) over(partition by emp_id order by attendence_date) as next_day_status
 from cleaned_attendence;
 
+
+
+
