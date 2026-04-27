@@ -9,7 +9,7 @@ on e.emp_id=s.emp_id;
                      
                          (or)
 
---Find the rank of employees within each department based on totalsalary --
+--Find the rank of employees within each department based on total salary --
 
 select e.emp_name,d.dept_name,sum(s.salary) as total_salary,row_number() over(partition by d.dept_name order by sum(s.salary) desc) as ranks
 from cleaned_employees e
