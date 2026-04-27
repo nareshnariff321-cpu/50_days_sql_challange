@@ -33,4 +33,3 @@ from cleaned_employees e
 join cleaned_departments d on e.dept_id=d.dept_id
 join cleaned_salaries s on e.emp_id=s.emp_id)t
 where ranks=1;
-
