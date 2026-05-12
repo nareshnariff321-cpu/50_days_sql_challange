@@ -40,3 +40,5 @@ create table raw_payments(
     payment_amount varchar(50),
     payment_date varchar(50)
 );
+
+
